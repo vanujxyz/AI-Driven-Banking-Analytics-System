@@ -146,7 +146,7 @@ class RecommendPL(object):
 
         body = str.encode(json.dumps(data))
 
-        # Machine learning scoring model API details here. Please contact us to know more about this.
+        # Machine learning scoring model API details go here.
         url = 'xxxxx'
         api_key = 'xxxx'
         headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}

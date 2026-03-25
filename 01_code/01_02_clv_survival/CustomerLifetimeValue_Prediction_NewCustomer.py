@@ -1,6 +1,5 @@
 # This code is used to score a machine learning model to enable to predict a CLV value for new customers
 # Model : K Means Estimator using H2O Deep Learning Models
-# Created on : 27-Aug-2018
 
 # Importing all required libraries
 import os

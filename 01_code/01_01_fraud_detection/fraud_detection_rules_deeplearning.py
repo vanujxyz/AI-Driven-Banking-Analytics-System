@@ -1,7 +1,4 @@
-# Fraud detection - Rule Based Engine (Sample) and Deep Learning Scoring Model
-# Created Date: 04-09-2018
-# This is just a sample of the original code and not the original code itself.
-# In order to get the full program and learn more about how this works please contact www.justanalytics.com
+# Fraud detection - Rule Based Engine and Deep Learning Scoring Model
 
 import pyodbc
 import pandas as pd

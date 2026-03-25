@@ -1,8 +1,6 @@
 # This code is used to score a deep learning model to predict the transaction amount and days of a customer.
-# The model has been built on a lot of data and what you see here is just a sample of that data.
 
 # Model : Deep Neural Network Regression
-# Created on : 27-Aug-2018
 
 # Importing all required libraries
 import os

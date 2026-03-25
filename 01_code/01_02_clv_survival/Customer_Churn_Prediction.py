@@ -1,6 +1,5 @@
 # This code is used to read a deep learning model and predict the churn of a customer
 # Model : Deep Neural Network Regression
-# Created on : 29-Aug-2018
 
 # Importing all required libraries
 import os

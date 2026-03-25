@@ -1,6 +1,5 @@
 # The program is a sample to perform the survival analysis for the customers across certain features
 # This program uses the simple Kaplan-Meyer Tests to perform this analysis
-# Created On : 28-08-2018
 
 import os
 import sys
