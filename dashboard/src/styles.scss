@@ -1,0 +1,31 @@
+@use '@carbon/react' with ($font-path: '@ibm/plex');
+
+body { margin: 0; background: #f4f4f4; }
+.page { max-width: 1280px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+.page h1 { font-size: 2rem; font-weight: 400; margin-bottom: .5rem; }
+.lede { font-size: 1.125rem; line-height: 1.5; max-width: 52rem; color: #393939; margin-bottom: 2rem; }
+.section { margin-top: 2.5rem; }
+.section h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: .75rem; }
+.tile-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); border-top: 1px solid #c6c6c6; border-left: 1px solid #c6c6c6; }
+.stat { background: #fff; padding: 1.25rem; border-right: 1px solid #c6c6c6; border-bottom: 1px solid #c6c6c6; }
+.stat .num { font-size: 2.5rem; font-weight: 300; line-height: 1.1; }
+.stat .label { font-size: .875rem; color: #525252; margin-top: .5rem; line-height: 1.4; }
+.card { background: #fff; padding: 1.25rem; border: 1px solid #e0e0e0; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 1rem; }
+@media (max-width: 480px) { .grid2 { grid-template-columns: 1fr; } }
+.meaning { background: #edf5ff; border-left: 4px solid #0f62fe; padding: 1rem 1.25rem; margin: 1rem 0; line-height: 1.5; }
+.meaning strong { display: block; margin-bottom: .25rem; }
+.caveat { background: #fcf4d6; border-left: 4px solid #f1c21b; padding: 1rem 1.25rem; margin: 1rem 0; line-height: 1.5; }
+.caveat strong { display: block; margin-bottom: .25rem; }
+.plain-table { width: 100%; border-collapse: collapse; background: #fff; font-size: .875rem; }
+.plain-table th, .plain-table td { text-align: left; padding: .75rem 1rem; border-bottom: 1px solid #e0e0e0; }
+.plain-table th { background: #e8e8e8; font-weight: 600; }
+.plain-table td.n, .plain-table th.n { text-align: right; font-variant-numeric: tabular-nums; }
+.toolbar { display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap; margin-bottom: 1rem; }
+.toolbar > * { flex: 1 1 220px; }
+.detail p { margin: .5rem 0; line-height: 1.5; }
+.row-click { cursor: pointer; }
+.footer-note { margin-top: 3rem; font-size: .75rem; color: #6f6f6f; }
+.bx--cc--chart-wrapper text, .cds--cc--chart-wrapper text { font-family: 'IBM Plex Sans', sans-serif; }
+
+.cds--cc--line path.line { stroke-width: 2.5px !important; }

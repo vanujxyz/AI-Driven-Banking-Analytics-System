@@ -1,0 +1,21 @@
+{
+  "logrank_segment": {
+    "chi2": 415.12960063972844,
+    "df": 5,
+    "p_value": 1.62548004758451e-87
+  },
+  "logrank_products": {
+    "chi2": 1241.8880735583296,
+    "p_value": 2.12535389902466e-270
+  },
+  "cox": {
+    "concordance_in_sample": 0.7704118325319755,
+    "concordance_cv_mean": 0.7698310099389954,
+    "concordance_cv_std": 0.01134990977992952
+  },
+  "weibull_aft": {
+    "concordance": 0.7700858828453897,
+    "AIC": 14934.133800896343
+  },
+  "mean_surv_5y_pred": 0.7336476990217083
+}

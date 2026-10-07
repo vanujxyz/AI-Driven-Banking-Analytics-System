@@ -1,0 +1,17 @@
+{
+  "logistic_regression": {
+    "roc_auc_oof": 0.7642425786470031,
+    "roc_auc_fold_mean": 0.7643603157568799,
+    "roc_auc_fold_std": 0.0059828923482717405,
+    "top_decile_lift": 2.718351324828263,
+    "top_decile_capture": 0.2718351324828263
+  },
+  "xgboost": {
+    "roc_auc_oof": 0.8635356757157834,
+    "roc_auc_fold_mean": 0.8638297443663069,
+    "roc_auc_fold_std": 0.007969377344859115,
+    "top_decile_lift": 4.038272816486751,
+    "top_decile_capture": 0.40382728164867515
+  },
+  "best_model": "xgboost"
+}

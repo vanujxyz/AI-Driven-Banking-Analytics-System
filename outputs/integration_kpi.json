@@ -1,0 +1,28 @@
+{
+  "contact_budget": 1000,
+  "total_value_lost_to_churn": 11082610.447827846,
+  "rank_by_value_at_risk": {
+    "churners_caught": 727,
+    "precision": 0.727,
+    "value_captured": 4219502.422753926,
+    "share_of_value": 0.3807318178887118
+  },
+  "rank_by_churn_prob_only": {
+    "churners_caught": 823,
+    "precision": 0.823,
+    "value_captured": 3807048.5095821377,
+    "share_of_value": 0.3435155036355452
+  },
+  "random_contact": {
+    "churners_caught": 197,
+    "precision": 0.197,
+    "value_captured": 1058570.3959035962,
+    "share_of_value": 0.09551634074723545
+  },
+  "action_counts": {
+    "CROSS_SELL": 6778,
+    "FRAUD_REVIEW": 1500,
+    "RETAIN_STANDARD": 1097,
+    "RETAIN_HIGH_VALUE": 625
+  }
+}
