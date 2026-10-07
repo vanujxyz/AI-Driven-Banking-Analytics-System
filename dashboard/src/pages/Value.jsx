@@ -2,12 +2,14 @@ import React from 'react';
 import { GroupedBarChart } from '@carbon/charts-react';
 import { Caveat, Meaning, Stat, SEGMENT, chartBase, int, money } from '../lib.jsx';
 
+const short = (s) => s.replace('-active', ', active').replace('-inactive', ', inactive');
+
 export default function Value({ data }) {
   const segs = data.clv.segments;
   const m = data.clv.metrics;
   const bars = segs.flatMap((s) => [
-    { group: 'Actual value', key: SEGMENT(s.segment), value: s.mean_clv_true },
-    { group: 'Predicted value', key: SEGMENT(s.segment), value: s.mean_clv_pred },
+    { group: 'Actual value', key: short(s.segment), value: s.mean_clv_true },
+    { group: 'Predicted value', key: short(s.segment), value: s.mean_clv_pred },
   ]);
   return (
     <>
@@ -26,14 +28,15 @@ export default function Value({ data }) {
           data={bars}
           options={{
             ...chartBase, height: '380px', title: 'Average five-year value per customer: actual vs predicted, by group',
-            axes: { left: { mapsTo: 'value', title: 'Five-year value (€)' }, bottom: { mapsTo: 'key', scaleType: 'labels' } },
+            legend: { truncation: { type: 'none' } },
+            axes: { left: { mapsTo: 'value', title: 'Five-year value (€)' }, bottom: { mapsTo: 'key', scaleType: 'labels', truncation: { type: 'none' } } },
           }}
         />
       </div>
       <Meaning>
         The predictions track the real averages reasonably closely for every group (within about 11%, and within 4% for most), so the bank can trust the model to say
         <em> which kinds of customer</em> are worth more. German customers are worth about 70% more than French or Spanish ones, mostly because
-        they hold larger balances.
+        they hold larger balances: about €120,000 on average, against about €62,000 in France and Spain (salaries and product counts are similar).
       </Meaning>
       <Caveat title="What the model cannot do">
         For any single person, the prediction is rough: it explains only about {Math.round(m.test_r2 * 100)}% of the differences between individual customers.

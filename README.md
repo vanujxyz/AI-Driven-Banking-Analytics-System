@@ -48,9 +48,8 @@ The data is public and partly synthetic, and several parts of the pipeline are g
 Requires Anaconda (or any Python 3.10 environment) and a JDK for H2O. Node.js is only needed for the dashboard.
 
 ```bash
-conda create -n bankml python=3.10 openjdk=17 -c conda-forge -y
+conda env create -f environment.yml
 conda activate bankml
-pip install -r requirements.txt "numpy<1.24"
 
 # datasets are downloaded from Kaggle; create a token in your Kaggle account settings
 export KAGGLE_API_TOKEN=your_token        # PowerShell: $env:KAGGLE_API_TOKEN="your_token"
@@ -68,6 +67,17 @@ The Kaggle download uses the REST API directly, so the `kaggle` CLI package is n
 
 A React dashboard presents the results in plain language for non-technical readers: what each chart means, an interactive retention-budget slider, and a searchable customer list that explains each customer in a sentence. It uses the [IBM Carbon Design System](https://carbondesignsystem.com).
 
+![Dashboard overview with the retention-budget slider](docs/screenshots/overview.png)
+
+| | |
+|---|---|
+| ![Churn risk groups](docs/screenshots/churn.png) | ![Survival curves and survival-adjusted value](docs/screenshots/stay.png) |
+| Churn risk groups | Survival curves and survival-adjusted value |
+| ![Fraud alerts at a fixed budget](docs/screenshots/fraud.png) | ![Searchable customer list](docs/screenshots/customers.png) |
+| Fraud caught at a fixed alert budget | Searchable customer list |
+
+The remaining pages (customer value, recommendations, data provenance) are in [`docs/screenshots/`](docs/screenshots).
+
 ```bash
 cd dashboard
 npm install
@@ -81,6 +91,8 @@ npm run build        # static site in dashboard/dist
 
 ```
 run_pipeline.py          runs every step, then the tests
+environment.yml          conda environment (Python 3.10 + JDK 17)
+requirements.txt         pip packages
 src/
   download_data.py       Kaggle download
   data_blend.py          blend PaySim and churn data, write provenance
@@ -93,6 +105,7 @@ dashboard/               React + IBM Carbon app
 docs/
   RESULTS.md             results, per-module notes, limitations
   DATA_PROVENANCE.md     what is real, blended or generated
+  screenshots/           dashboard pages
 ```
 
 ## Reproducibility notes
@@ -105,3 +118,7 @@ All random seeds are fixed (42). Re-running can still shift a count by one or tw
 - [PaySim synthetic financial transactions](https://www.kaggle.com/datasets/ealaxi/paysim1), Kaggle
 
 Check each dataset's licence on Kaggle before reusing the data.
+
+## Licence
+
+Code is released under the MIT licence (see [`LICENSE`](LICENSE)). The datasets are not covered by it.

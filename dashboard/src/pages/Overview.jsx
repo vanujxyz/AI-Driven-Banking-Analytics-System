@@ -92,7 +92,7 @@ export default function Overview({ data }) {
               ...chartBase, title: 'Lost value reached, by share of customers contacted',
               axes: { bottom: { mapsTo: 'budget', title: 'Share of customers contacted (%)', scaleType: 'linear' },
                       left: { mapsTo: 'value', title: 'Share of lost value reached (%)' } },
-              curve: 'curveMonotoneX', points: { enabled: false },
+              curve: 'curveMonotoneX', points: { enabled: false }, legend: { truncation: { type: 'none' } },
             }}
           />
         </div>

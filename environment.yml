@@ -1,0 +1,10 @@
+name: bankml
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - openjdk=17          # required by H2O AutoML (customer value module)
+  - pip
+  - pip:
+      - -r requirements.txt
+      - numpy<1.24

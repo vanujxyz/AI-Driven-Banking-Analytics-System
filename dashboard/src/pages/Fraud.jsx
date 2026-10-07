@@ -19,8 +19,8 @@ export default function Fraud({ data }) {
       </p>
       <div className="tile-row">
         <Stat num={int(nn['budget_0.01'].alerts)} label="payments flagged for review at a 1% budget (out of about 162,000 tested)" />
-        <Stat num={pct(nn['budget_0.01'].recall)} label="of the real fraud caught within those alerts" />
-        <Stat num={pct(nn['budget_0.01'].precision)} label="of the flagged payments were really fraud" />
+        <Stat num={pct(nn['budget_0.01'].recall, 1)} label="of the real fraud caught within those alerts" />
+        <Stat num={pct(nn['budget_0.01'].precision, 1)} label="of the flagged payments were really fraud" />
         <Stat num={pct(f.rules_only['budget_0.01'].recall, 1)} label="caught by simple rules (speed, distance, time gap) alone" />
       </div>
       <div className="section card">
@@ -29,6 +29,7 @@ export default function Fraud({ data }) {
           options={{
             ...chartBase, title: 'Share of all fraud caught, by how many payments analysts can review',
             axes: { left: { mapsTo: 'value', title: 'Fraud caught (%)', domain: [0, 100] }, bottom: { mapsTo: 'key', scaleType: 'labels', title: 'Alert budget' } },
+            legend: { truncation: { type: 'none' } }, bars: { maxWidth: 40 },
           }}
         />
       </div>

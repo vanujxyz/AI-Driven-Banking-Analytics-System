@@ -13,7 +13,7 @@ const METHODS = [
 export default function Recs({ data }) {
   const r = data.recommender;
   const bars = ['warm', 'cold'].flatMap((g) => METHODS.map(([k, name]) => ({
-    group: name, key: g === 'warm' ? 'Customers with product history' : 'New customers (no history)',
+    group: name, key: g === 'warm' ? 'With product history' : 'New, no history',
     value: +(r[g][k]['hit_rate@1'] * 100).toFixed(1) })));
   return (
     <>
@@ -32,6 +32,7 @@ export default function Recs({ data }) {
           data={bars}
           options={{
             ...chartBase, height: '400px', title: 'How often the hidden product was recommended first',
+            legend: { truncation: { type: 'none' } },
             axes: { left: { mapsTo: 'value', title: 'Correct first guess (%)' }, bottom: { mapsTo: 'key', scaleType: 'labels' } },
           }}
         />
